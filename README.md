@@ -62,5 +62,7 @@ per salvare da nano ctrl+s ctrl+x
 #### Cambiare i permessi
 `chmod 755 /home/ubuntu`
 
+#### Creare dentro cartella web il file index.html e scrivere codice
+
 #### Restart server web
 `sudo systemctl restart apache2`

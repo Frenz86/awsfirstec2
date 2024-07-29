@@ -24,6 +24,8 @@ Host macchina6
 ##############################################################
 ### Installare Apache WebServer
 
+`sudo apt-get update`
+
 `sudo apt-get install apache2 -y`
 
 ### Avvia il server web:

@@ -32,6 +32,7 @@ Host macchina6
 `sudo systemctl start apache2`
 
 `mkdir -p /home/ubuntu/web`
+
 `sudo nano /etc/apache2/sites-available/mysite.conf`
 
 ```
@@ -50,8 +51,12 @@ Host macchina6
 </VirtualHost>
 
 ```
+per salvare da nano ctrl+s ctrl+x
+
 #### Abilita il nuovo sito e disabilita il default
+
 `sudo a2ensite mysite.conf`
+
 `sudo a2dissite 000-default.conf`
 
 #### Cambiare i permessi

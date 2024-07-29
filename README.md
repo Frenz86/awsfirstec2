@@ -22,3 +22,38 @@ Host macchina6
 
 ```
 ##############################################################
+### Installare Apache WebServer
+
+`sudo apt-get install apache2 -y`
+
+### Avvia il server web:
+`sudo systemctl start apache2`
+
+`mkdir -p /home/ubuntu/web`
+`sudo nano /etc/apache2/sites-available/mysite.conf`
+
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /home/ubuntu/web
+    
+    <Directory /home/ubuntu/web>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
+#### Abilita il nuovo sito e disabilita il default
+`sudo a2ensite mysite.conf`
+`sudo a2dissite 000-default.conf`
+
+#### Cambiare i permessi
+`chmod 755 /home/ubuntu`
+
+#### Restart server web
+`sudo systemctl restart apache2`
